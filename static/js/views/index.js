@@ -18,11 +18,17 @@ function getKeywords() {
 }
 
 function popSearch() {
-    window.open('https://www.baidu.com/s?ie=UTF-8&wd=' + getKeywords().value);
+    if (getKeywords().value) {
+        window.open('https://www.baidu.com/s?ie=UTF-8&wd=' + getKeywords().value);
+    } else {
+        //todo 提示
+    }
 }
 
 function dailyRank() {
     if (getKeywords().value) {
         window.open('https://search.bilibili.com/all?keyword=' + getKeywords().value);
+    } else {
+        //todo 提示
     }
 }
