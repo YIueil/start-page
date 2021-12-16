@@ -18,6 +18,8 @@
     var ctx = canvas.getContext('2d');
     var width = masthead.clientWidth;
     var height = masthead.clientHeight;
+    COUNT = width  / 60;
+
     var i = 0;
     var active = false;
 
