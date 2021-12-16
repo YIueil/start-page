@@ -1,8 +1,19 @@
-
 (function () {
+    // 设置雪花数量
+    var COUNT = 50;
 
-    var COUNT = 150;
-    var masthead = document.querySelector('.sky');
+    var masthead = document.createElement('masthead');
+    document.body.appendChild(masthead);
+
+    // 设置雪花样式
+    masthead.style.top = 0;
+    masthead.style.color = '#FFF';
+    masthead.style.width = '100%';
+    masthead.style.height = '100%';
+    masthead.style.position = 'fixed';
+    masthead.style.zIndex = -1;
+
+    // 创建canvas层进行雪花绘制
     var canvas = document.createElement('canvas');
     var ctx = canvas.getContext('2d');
     var width = masthead.clientWidth;

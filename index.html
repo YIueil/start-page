@@ -8,13 +8,22 @@
     <link rel="stylesheet" href="./static/css/index.css">
 </head>
 <body>
+<main>
+    <header>
+        <div class="time">
+            <h1 id="timeText"></h1>
+        </div>
+    </header>
+
     <div class="search">
         <form action="javascript:void(0);">
-            <input id="search-box" name="q" size="40" type="text" placeholder="搜索" onkeypress="search()" />
+            <img id="search-beer" height="35px" src="./static/img/beer.svg" onclick="dailyRank()">
+            <input id="search-box" name="keywords" autocomplete="off" size="40" type="text" placeholder="Search" onkeypress="search()" />
             <input id="search-btn" value="Go" type="button" onclick="popSearch()"/>
         </form>
     </div>
-    <section class="sky"></section>
+</main>
 </body>
 <script src="./static/js/lib/snow.js"></script>
+<script src="./static/js/views/index.js"></script>
 </html>
