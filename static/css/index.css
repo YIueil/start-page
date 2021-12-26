@@ -4,6 +4,7 @@ body {
     min-height: 100%;
     position: relative;
     font-family: Arial;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
 }
 
 .time {
