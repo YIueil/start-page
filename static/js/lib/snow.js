@@ -19,6 +19,9 @@
     var width = masthead.clientWidth;
     var height = masthead.clientHeight;
     COUNT = width  / 60;
+    if (COUNT < 20) {
+        COUNT = 20;
+    }
 
     var i = 0;
     var active = false;
