@@ -18,7 +18,7 @@
     var ctx = canvas.getContext('2d');
     var width = masthead.clientWidth;
     var height = masthead.clientHeight;
-    COUNT = width  / 60;
+    COUNT = 60;
 
     var i = 0;
     var active = false;
@@ -31,10 +31,11 @@
         ctx.fillStyle = '#FFF';
 
         var wasActive = active;
-        active = width > 1000;
+        active = width > 200;
 
-        if (!wasActive && active)
+        if (!wasActive && active) {
             requestAnimFrame(update);
+        }
     }
 
     var Snowflake = function () {
@@ -47,7 +48,7 @@
         this.reset();
     }
 
-    Snowflake.prototype.reset = function() {
+    Snowflake.prototype.reset = function () {
         this.x = Math.random() * width;
         this.y = Math.random() * -height;
         this.vy = 1 + Math.random() * 3;
@@ -93,11 +94,11 @@
     }
 
     // shim layer with setTimeout fallback
-    window.requestAnimFrame = (function(){
-        return  window.requestAnimationFrame       ||
+    window.requestAnimFrame = (function () {
+        return window.requestAnimationFrame ||
             window.webkitRequestAnimationFrame ||
-            window.mozRequestAnimationFrame    ||
-            function( callback ){
+            window.mozRequestAnimationFrame ||
+            function (callback) {
                 window.setTimeout(callback, 1000 / 10);
             };
     })();
